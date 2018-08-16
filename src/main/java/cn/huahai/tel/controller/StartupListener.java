@@ -45,7 +45,7 @@ public class StartupListener implements ApplicationContextAware, ServletContextA
 	private LinkFailureMapper lfm;
 	@Resource
 	private AllNetworkBaseMapper anbm;
-	@Resource
+	@Resource								
 	private StartupListenerMapper slm;
 	@Resource
 	IDataServer ds;

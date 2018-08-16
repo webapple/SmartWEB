@@ -77,6 +77,7 @@ option7.series[0].type = "line";
 setMinMax(option7, 5);
 //重新定义最大值，最小值的算法 
 function setMinMax(option, number) {
+	console.log(option);
 	option.yAxis[0].min = function () {
 		console.log((option.series[0].data.min() - number).toFixed(3));
 		return (option.series[0].data.min() - number).toFixed(3);
@@ -147,6 +148,7 @@ if(navUrl.three == 0){
 	}else{
 		getAllUrl = "/main/selectAllData.do?threeName="+localStorage.getItem("selectRange");
 	}
+	
 }else if(navUrl.three == 1){
 	getAllUrl = "/main/selectHourAllNetCell.do?tagName="+localStorage.getItem("selectRange");
 }else{
@@ -230,6 +232,7 @@ getDataProAll.then(function(data){
 		option.xAxis[0].data = xAxis;
 		option.series[0].data = array;
 		myChart.setOption(option);
+		
 	};
 	drawChart(wirelessConnectivity, "无线接通率", myChart1, option1);
 	if(navUrl.three == 0){
