@@ -38,7 +38,7 @@ import cn.huahai.tel.service.IDataServer;
 @Component  
 public class StartupListener implements ApplicationContextAware, ServletContextAware,  
         InitializingBean, ApplicationListener<ContextRefreshedEvent> {
-	private String flag = null;
+	private String flag = "000000";
 	@Resource
 	private ImportExcelMapper iem;
 	@Resource
@@ -133,7 +133,7 @@ public class StartupListener implements ApplicationContextAware, ServletContextA
 		System.out.println(!flagTable.equals(flag));
 		if(!flagTable.equals(flag)) {
 			try {
-				if(flag != null) {
+				if(!flag.equals("000000")) {
 					lfm.copyLinkFailTable("YM_SYS_LINKBAD"+flagTable);
 				}
 			} catch (Exception e) {

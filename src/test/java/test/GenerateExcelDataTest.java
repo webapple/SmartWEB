@@ -66,9 +66,9 @@ public class GenerateExcelDataTest {
 		System.out.println(data.size());
 		for (String string : data) {
 //			System.out.println("@JsonProperty(\""+string+"\")");
-		    System.out.println("private String "+string+";");
+//		    System.out.println("private String "+string+";");
 // 			System.out.print("\""+string+"\""+",");
-//			System.out.print(string+",");
+			System.out.print(string+",");
 		}
 	}
 	@Test
