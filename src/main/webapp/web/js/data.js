@@ -48,7 +48,7 @@ var option4 = jQuery.extend(true, {}, option2);
 option4.title.text = "上行干扰";
 option4.series[0].name = "上行干扰";
 option4.series[0].type = "line";
-setMinMax(option4, 10);
+setMinMax(option4, 2);
 myChart4.setOption(option4);
 
 var myChart5 = echarts.init($(".table7")[0]);
@@ -74,7 +74,7 @@ option7.title.text = "平均激活用户数";
 option7.series[0].name = "平均激活用户数";
 setToFixed(option7, 1);
 option7.series[0].type = "line";
-setMinMax(option7, 5);
+setMinMax(option7, 10);
 //重新定义最大值，最小值的算法 
 function setMinMax(option, number) {
 	console.log(option);
