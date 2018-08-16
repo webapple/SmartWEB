@@ -288,7 +288,7 @@ function getFileList(flag, document) {
 								submitflag = "AllNetWork";
 								filename = "小时级全网数据"+filename;
 								//$("#downloadExcel a").attr("href",projectUrl + '/excel/generateHourAllNetTableExcel.do?tagName='+tagName); 
-								var getUrl = + projectUrl 
+								var getUrl = projectUrl 
 								+ '/excel/generateHourAllNetTableExcel.do?tagName=' +tagName;
 								document.append('<li onclick=myDownload("'+getUrl+'")><a class="samllSize" href="#"><img class="excelIcon" src="'+projectUrl
 										+"/web/img/excel.png"+ '"/>小时级全网级数据</a></li>');

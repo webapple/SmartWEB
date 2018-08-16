@@ -46,7 +46,7 @@ public class UserController {
 	 * @param req 请求对象
 	 * @param Uname 用户名
 	 * @param password 密码
-	 * @param received 验明码
+	 * @param received 验证码
 	 * @return 是否登陆成功
 	 */
 	@RequestMapping("/login.do")

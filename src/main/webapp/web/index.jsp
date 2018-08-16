@@ -3,33 +3,33 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<meta charset="UTF-8">
-<!-- 每经过800秒页面刷新一次 （15分钟）参数设置页面并不需要一直刷新 -->
-<c:if test="${two != 10}">
-	<meta http-equiv="Refresh" content="800">
-</c:if>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${projectName}</title>
-<link rel="icon"
-	href="${pageContext.request.contextPath}/web/img/cmcc.png"
-	type="image/x-icon" />
-<!-- 最新的 Bootstrap 核心 css 文件 -->
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/web/css/framework/bootstrap.min.css" />
-<!-- 引用bootstrap 插件所需要的css文件-->
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/web/css/framework/style.css" />
-<link href="${pageContext.request.contextPath}/web/css/framework/toastr.css" rel="stylesheet"/>
-
-<!-- 自己的css -->
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/web/css/main.css" />
-<!-- excel参数导入 -->
-<c:if test="${two == 10}">
+	<meta charset="UTF-8">
+	<!-- 每经过800秒页面刷新一次 （15分钟）参数设置页面并不需要一直刷新 -->
+	<c:if test="${two != 10}">
+		<meta http-equiv="Refresh" content="800">
+	</c:if>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>${projectName}</title>
+	<link rel="icon"
+		href="${pageContext.request.contextPath}/web/img/cmcc.png"
+		type="image/x-icon" />
+	<!-- 最新的 Bootstrap 核心 css 文件 -->
 	<link rel="stylesheet"
-		href="${pageContext.request.contextPath}/web/css/excelImport.css" />
-</c:if>
+		href="${pageContext.request.contextPath}/web/css/framework/bootstrap.min.css" />
+	<!-- 引用bootstrap 插件所需要的css文件-->
+	<link rel="stylesheet"
+		href="${pageContext.request.contextPath}/web/css/framework/style.css" />
+	<link href="${pageContext.request.contextPath}/web/css/framework/toastr.css" rel="stylesheet"/>
+	
+	<!-- 自己的css -->
+	<link rel="stylesheet"
+		href="${pageContext.request.contextPath}/web/css/main.css" />
+	<!-- excel参数导入 -->
+	<c:if test="${two == 10}">
+		<link rel="stylesheet"
+			href="${pageContext.request.contextPath}/web/css/excelImport.css" />
+	</c:if>
 </head>
 <body>
 	<div class="main">
