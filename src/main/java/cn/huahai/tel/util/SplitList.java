@@ -11,6 +11,7 @@ public class SplitList {
 	/**
 	 * 将list拆分成n等分
 	 * @param source list数据
+	 * @param <T> Bean类型
 	 * @param n 拆分成几段
 	 * @return 拆分之后数据
 	 */

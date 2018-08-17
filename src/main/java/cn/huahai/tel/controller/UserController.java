@@ -93,7 +93,8 @@ public class UserController {
 	}
 	/**
 	 * 判断验证码是否正确
-	 * @param req
+	 * @param req Request
+	 * @param received 验证码
 	 * @return 是否正确
 	 */
 	@RequestMapping("/verify.do")

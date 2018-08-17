@@ -17,13 +17,13 @@ public interface LinkFailureMapper {
 	LinkFailure[] selectLinkFailure();
 	/**
 	 * 查询相对应的表名的全网级链路故障。
-	 * @param tablename
+	 * @param tablename 表名称
 	 * @return 链路故障
 	 */
 	LinkFailure selectAllLinkFailure(@Param("tablename") String tablename);
 	/**
 	 * 查询相对应的表名的vip链路故障
-	 * @param tablename
+	 * @param tablename 表名称
 	 * @return 链路故障
 	 */
 	LinkFailure selectVipLinkFailure(@Param("tablename") String tablename);
@@ -42,8 +42,7 @@ public interface LinkFailureMapper {
 	String selectDateTimeByTablename(@Param("tablename") String tablename);
 	/**
 	 * 复制一个表YM_SYS_LINKBAD
-	 * @param table_name_new
-	 * @param table_name_old
+	 * @param table_name_new 新的表名
 	 */
 	void copyLinkFailTable(@Param("table_name_new")String table_name_new);
 }

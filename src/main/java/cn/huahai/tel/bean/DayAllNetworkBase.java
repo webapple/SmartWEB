@@ -3,6 +3,11 @@ package cn.huahai.tel.bean;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+/**
+ * 天级全网级数据
+ * @author lizhuodong
+ *
+ */
 @JsonPropertyOrder(value = {"DAY1","无线接通率","无线掉线率","切换成功率","流量GB","RRC加ERAB失败总次数","拥塞次数",
 		"平均激活用户数","最大激活用户数","无线掉线率分子","上行干扰","RRC连接建立成功率","ERAB建立成功率",
 		"ERAB掉线率","上行流量GB","下行流量GB","上行PRB平均利用率","下行PRB平均利用率","小区可用率",

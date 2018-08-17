@@ -23,7 +23,7 @@ public interface IUserServer {
 	 * @param request 请求对象
 	 * @param received 验证码
 	 * @param user 用户对象
-	 * @return
+	 * @return 用户对象
 	 */
 	User login(HttpServletRequest request,String received,User user);
 	/**
@@ -35,7 +35,8 @@ public interface IUserServer {
 	public void kaptcha(HttpServletRequest req,HttpServletResponse rsp)throws Exception;
 	/**
 	 * 判断验证码是否正确 正确返回true 不正确返回false
-	 * @param request
+	 * @param request 请求对象
+	 * @param received 验证码
 	 * @return 是否成功
 	 */
 	public boolean verify(HttpServletRequest request,String received);

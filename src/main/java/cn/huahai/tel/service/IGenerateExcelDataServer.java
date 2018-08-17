@@ -86,7 +86,7 @@ public interface IGenerateExcelDataServer {
 	/**
 	 * 根据查询 小区级数据生成excel(小时级)
 	 * @param tagName 小区组名称
-	 * @param timeNumber 12位代表时间的数字
+	 * @param tableName 数据所在的表名称
 	 * @param session 返回数据流所需
 	 * @return 返回筛选之后的小区数据的excel文件数据流(小时级)
 	 */

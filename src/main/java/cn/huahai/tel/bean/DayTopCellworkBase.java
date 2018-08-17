@@ -1,7 +1,13 @@
 package cn.huahai.tel.bean;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+/**
+ * 天级top小区级数据
+ * @author lizhuodong
+ *
+ */
 @JsonPropertyOrder(value = {
 		"DAY1","无线掉线率","无线接通率","切换成功率","ERAB建立请求数","小区可用率分母","流量GB","上行干扰",
 		"RRC连接总数","上行PDCP平均速率KBPS","ESRVCC切换成功次数","ENODEB寻呼数",

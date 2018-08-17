@@ -171,6 +171,8 @@ public class ExcelConreoller {
 	 * @param flag flag 如果为“cell” 查询筛选小区数据 如果为“AllNetWork” 则查询筛选全网数据
 	 * @param session session对象
 	 * @param response 响应对象
+	 * @param request request
+	 * @param filename 文件名
 	 * @return excel文件二进制数据
 	 */
 	@RequestMapping("/generatePointKeyExcel.do")
@@ -204,9 +206,11 @@ public class ExcelConreoller {
 	 * @param tagName 查询范围的tag 如： vip小区，all，某某演唱会
 	 * @param excelName 文件名（包含查询的时间点）
 	 * @param flag 查询的是小时级全网数据，还是小时级小区数据 如果为“cell” 查询筛选小区数据 如果为“AllNetWork” 则查询筛选全网数据
-	 * @param session
-	 * @param response
-	 * @return 
+	 * @param session session
+	 * @param filename 文件名
+	 * @param response response
+	 * @param request request
+	 * @return  文件流
 	 */
 	@RequestMapping("/generateHourPointKeyExcel.do")
 	@ResponseBody
@@ -240,6 +244,7 @@ public class ExcelConreoller {
 	 * @param excelName 原始表名
 	 * @param flag 判断是否是全网数据（全网数据接口弃用，改用generateDayAllNetTableExcel），还是小区数据
 	 * @param session 返回二进制数据（输入流）
+	 * @param filename 文件名
 	 * @param request 添加响应头（文件名）所需
 	 * @param response 添加响应头（文件名）所需
 	 * @return 天级excel小区表数据

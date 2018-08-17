@@ -57,7 +57,10 @@ public class AllNetworkController {
 	/**
 	 * 前端传入excel文件名，后台根据事先设置好的路径，读取excel文件并返回文件流
 	 * @param filename excel文件名
+	 * @param excelname 文件名
+	 * @param session session
 	 * @param response 响应对象
+	 * @param request 请求对象
 	 */
 	@RequestMapping("/getAllNetWork.do")
 	public void getAllNetwork(
@@ -119,7 +122,7 @@ public class AllNetworkController {
 	 * 前端传入flag字符串，后台返回相应的文件列表
 	 * @param flag  1代表全网数据 ，2代表小区数据数据，3代表Top小区数据
 	 * @param session session对象
-	 * @return
+	 * @return 文件名称的集合
 	 */
 	@RequestMapping("/getAllNetworkFileList.do")
 	@ResponseBody
@@ -189,7 +192,7 @@ public class AllNetworkController {
 	/**
 	 * 前端传入flag字符串，后台返回相应的文件列表(小时级)
 	 * @param flag  1代表全网数据 ，2代表小区数据数据，3代表Top小区数据
-	 * @return
+	 * @return 文件名称的集合
 	 */
 	@RequestMapping("/getHourAllNetworkFileList.do")
 	@ResponseBody

@@ -36,16 +36,11 @@ public class SetValueParseExcel {
 
 	/**
 	 * 将流中的Excel数据转成map集合
-	 * 
-	 * @param in
-	 *            输入流
-	 * @param fileName
-	 *            文件名（判断Excel版本）
-	 * @param mapping
-	 *            字段名称映射
-	 * @return 将excel转化成为map集合对象
-	 * @throws Exception
-	 *             转化异常
+	 * @param in 输入流
+	 * @param fileName 文件名你 （判断Excel版本）
+	 * @param setValue 临界值
+	 * @param out 输出流
+	 * @throws Exception 转化异常
 	 */
 	@SuppressWarnings("deprecation")
 	public static void parseExcel(

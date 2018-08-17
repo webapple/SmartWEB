@@ -1,5 +1,10 @@
 package cn.huahai.tel.bean;
 
+/**
+ * 临界值的javaBean
+ * @author lizhuodong
+ *
+ */
 public class CriticalValueBase {
 	private String attribute;
 	private Double compare;

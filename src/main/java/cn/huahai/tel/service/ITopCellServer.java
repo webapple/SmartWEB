@@ -29,16 +29,16 @@ public interface ITopCellServer {
 	
 	/**
 	 * 查询小时级VIP小区级数据 前20条
-	 * @param tableName
-	 * @return 
+	 * @param tableName 有全部数据的表
+	 * @return 小时级vip数据
 	 */
 	HourTopCellworkBase[] selectVIPHourTopCell(String tableName);
 	
 	/**
 	 * 查询小时级重点小区级数据 前20条
-	 * @param cellInfoTablename
-	 * @param regTablename
-	 * @return
+	 * @param cellInfoTablename 主表-所有信息所在的表
+	 * @param regTablename 小区信息所在的表
+	 * @return 小时级重点小区数据
 	 */
 	HourTopCellworkBase[] selectKeyPointHourTopCell(String cellInfoTablename,
 			String regTablename);

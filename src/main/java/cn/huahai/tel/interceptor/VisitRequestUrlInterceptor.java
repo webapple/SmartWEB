@@ -9,6 +9,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import cn.huahai.tel.service.VisitCountServer;
 
+/**
+ * 访问路径统计
+ * @author lizhuodong
+ *
+ */
 public class VisitRequestUrlInterceptor  implements HandlerInterceptor {
 	@Resource
 	VisitCountServer vcs;

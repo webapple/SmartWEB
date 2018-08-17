@@ -15,7 +15,7 @@ public interface AllNetworkBaseMapper {
 	 * 查询所有的全网信息 
 	 * @param tablename 表明
 	 * @param field 字段名
-	 * @return
+	 * @return 全网数据
 	 */
 	AllNetworkBase[] selectAllNetworkbase(
 			@Param("tablename")String tablename,

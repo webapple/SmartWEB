@@ -68,7 +68,7 @@ public class MainController {
 	 * 根据具体的小区组名称查询和筛选相关全网数据
 	 * @param threeName 当前小区组名称
 	 * @param session 获取当前导航信息
-	 * @return
+	 * @return 全网级数据
 	 */
 	@RequestMapping("/selectAllData.do")
 	@ResponseBody
@@ -152,10 +152,12 @@ public class MainController {
 	
 	// 小时级查询top小区
 	/**
-	 * 筛选Top小区数据，传递一个参数threeName 
+	 *  筛选Top小区数据，传递一个参数threeName 
 	 * （需要查询的小区组，如：“20180612重点小区”或者“保障重点小区”）,
 	 * 返回相应的数据，如果不需要进行筛选，则传递“null”字符串
-	 * @return 筛选之后的top小区数据
+	 * @param session session
+	 * @param tagName tag名称
+	 * @return 小时级小区数据
 	 */
 	@RequestMapping("/selectHourTopCell.do")
 	@ResponseBody
@@ -212,7 +214,7 @@ public class MainController {
 	/**
 	 * 查询小时级全网数据.
 	 * @param tagName 当前小时级选项卡名称
-	 * @return
+	 * @return 小时级全网数据
 	 */
 	@RequestMapping("/selectHourAllNetCell.do")
 	@ResponseBody
@@ -226,7 +228,7 @@ public class MainController {
 	/**
 	 * 查询天级全网数据.
 	 * @param tagName 当前天级选项卡名称
-	 * @return
+	 * @return 天级全网数据
 	 */
 	@RequestMapping("/selectDayAllNetCell.do")
 	@ResponseBody
@@ -254,6 +256,7 @@ public class MainController {
 	}
 	/**
 	 * 查询链路故障
+	 * @param tagName tag名称
 	 * @return 链路故障信息
 	 */
 	@RequestMapping("/selectNewLinkFailure.do")

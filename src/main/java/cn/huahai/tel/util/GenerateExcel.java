@@ -177,15 +177,12 @@ public class GenerateExcel {
 		}
 		return wb;
 	}
-
 	/**
 	 * 转换bean为map
-	 * 
-	 * @param source
-	 *            要转换的bean
-	 * @return map数据
-	 * @throws IllegalAccessException
-	 *             转化异常
+	 * @param source 数据源javaBean
+	 * @param <T> Bean类型
+	 * @return map表
+	 * @throws IllegalAccessException javaBean转换异常
 	 */
 	public static <T> Map<String, String> bean2Map(T source) throws IllegalAccessException {
 		Map<String, String> result = new HashMap<>();
@@ -213,6 +210,7 @@ public class GenerateExcel {
 	 * 
 	 * @param source
 	 *            map属性
+	 * @param <T> Bean类型
 	 * @param instance
 	 *            要转换成的备案
 	 * @return 该bean
