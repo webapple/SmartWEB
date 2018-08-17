@@ -288,14 +288,17 @@ public class GenerateExcelDataServer implements IGenerateExcelDataServer {
 		DayTopCellworkBase[] dataCell = null;
 		if ("VIP小区".equals(tagName)) {
 			
-			dataCell = tcbm.selectVIPDayTopCell(tableName);
+			//dataCell = tcbm.selectVIPDayTopCell(tableName);
+			dataCell = tcbm.selectAllVIPDayTopCell(tableName);
 		} else if ("all".equals(tagName)) {
-			dataCell = tcbm.selectAllDayTopCell(tableName);
+			//dataCell = tcbm.selectAllDayTopCell(tableName);
+			dataCell = tcbm.selectAllAllNetDayTopCell(tableName);
 		} else {
 			// 如果是小区组,查询小区表
 			String cellTable = kpcm.selectTablenameByTagname(tagName);
 			// 两表联查,得出数据
-			dataCell = tcbm.selectPointKeyDayTopCell(tableName, cellTable);
+			//dataCell = tcbm.selectPointKeyDayTopCell(tableName, cellTable);
+			dataCell = tcbm.selectAllPointKeyDayTopCell(tableName, cellTable);
 		}
 		List<Map<String, String>> dataList = new ArrayList<Map<String, String>>();
 		System.out.println("查询出数据长度：" + dataCell.length);
@@ -371,14 +374,17 @@ public class GenerateExcelDataServer implements IGenerateExcelDataServer {
 			// 添加15分钟级表名正则
 			// 调用联表查询的方法 ，对data进行赋值
 			// data = gedm.generateVIPCellDataExcel(tablename);
-			dataCell = tcbm.selectVIPHourTopCell(tableName);
+			//dataCell = tcbm.selectVIPHourTopCell(tableName);
+			System.out.println("已经出发");
+			dataCell = tcbm.selectAllVIPHourTopCell(tableName);
 		} else if ("all".equals(tagName)) {
-			dataCell = tcbm.selectAllHourTopCell(tableName);
+			dataCell = tcbm.selectAllAllNetHourTopCell(tableName);
 		} else {
 			// 如果是小区组,查询小区表
 			String cellTable = kpcm.selectTablenameByTagname(tagName);
 			// 两表联查,得出数据
-			dataCell = tcbm.selectPointKeyHourTopCell(tableName, cellTable);
+			//dataCell = tcbm.selectPointKeyHourTopCell(tableName, cellTable);
+			dataCell = tcbm.selectAllPointKeyHourTopCell(tableName, cellTable);
 		}
 		List<Map<String, String>> dataList = new ArrayList<Map<String, String>>();
 		System.out.println("查询出数据长度：" + dataCell.length);

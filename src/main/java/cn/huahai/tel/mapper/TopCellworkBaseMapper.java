@@ -27,6 +27,13 @@ public interface TopCellworkBaseMapper {
 	 * @return hour小区信息
 	 */
 	HourTopCellworkBase[] selectAllHourTopCell(@Param("tablename")String tablename);
+	
+	/**
+	 * 查询出前小时级别所有的信息  ORDER BY RRC加ERAB失败总次数 desc
+	 * @param tablename 表名称
+	 * @return hour小区信息
+	 */
+	HourTopCellworkBase[] selectAllAllNetHourTopCell(@Param("tablename")String tablename);
 	/**
 	 * 查询前天级前20条数据 ORDER BY RRC加ERAB失败总次数 desc
 	 * @param tablename 表名称
@@ -35,17 +42,38 @@ public interface TopCellworkBaseMapper {
 	DayTopCellworkBase[] selectAllDayTopCell(@Param("tablename") String tablename);
 	
 	/**
+	 * 查询前天级所有数据 ORDER BY RRC加ERAB失败总次数 desc
+	 * @param tablename 表名称
+	 * @return Day小区信息
+	 */
+	DayTopCellworkBase[] selectAllAllNetDayTopCell(@Param("tablename") String tablename);
+	
+	/**
 	 *  查询出前小时级别VIP,20条信息  ORDER BY RRC加ERAB失败总次数 desc
 	 * @param tablename 表名称
 	 * @return 小时级Vip小区top信息
 	 */
 	HourTopCellworkBase[] selectVIPHourTopCell(@Param("tablename")String tablename);
+	
+	/**
+	 *  查询出全部小时级别VIP ORDER BY RRC加ERAB失败总次数 desc
+	 * @param tablename 表名称
+	 * @return 小时级Vip小区top信息
+	 */
+	HourTopCellworkBase[] selectAllVIPHourTopCell(@Param("tablename")String tablename);
+	
 	/**
 	 * 查询前天级VIP的20条数据 ORDER BY RRC加ERAB失败总次数 desc
 	 * @param tablename 表名称
 	 * @return Day小区信息
 	 */
 	DayTopCellworkBase[] selectVIPDayTopCell(@Param("tablename") String tablename);
+	/**
+	 * 查询前天级VIP的所有数据 ORDER BY RRC加ERAB失败总次数 desc
+	 * @param tablename 表名称
+	 * @return Day小区信息
+	 */
+	DayTopCellworkBase[] selectAllVIPDayTopCell(@Param("tablename") String tablename);
 	
 	
 	/**
@@ -58,12 +86,33 @@ public interface TopCellworkBaseMapper {
 			@Param("regTablename") String regTablename);
 	
 	/**
+	 *  查询出前小时级别重点小区所有信息  ORDER BY RRC加ERAB失败总次数 desc
+	 * @param cellInfoTablename 小时级小区信息表
+	 * @param regTablename 存储小区enode_id的正则表
+	 * @return 小时级重点小区top信息
+	 */
+	HourTopCellworkBase[] selectAllPointKeyHourTopCell(@Param("cellInfoTablename") String cellInfoTablename,
+			@Param("regTablename") String regTablename);
+	
+	
+	
+	/**
 	 * 查询前天级重点小区的20条数据 ORDER BY RRC加ERAB失败总次数 desc
  	 * @param cellInfoTablename 小时级小区信息表
 	 * @param regTablename 存储小区enode_id的正则表
 	 * @return Day小区信息
 	 */
 	DayTopCellworkBase[] selectPointKeyDayTopCell(@Param("cellInfoTablename") String cellInfoTablename,
+			@Param("regTablename") String regTablename);
+	
+	
+	/**
+	 * 查询前天级重点小区的所有数据 ORDER BY RRC加ERAB失败总次数 desc
+ 	 * @param cellInfoTablename 小时级小区信息表
+	 * @param regTablename 存储小区enode_id的正则表
+	 * @return Day小区信息
+	 */
+	DayTopCellworkBase[] selectAllPointKeyDayTopCell(@Param("cellInfoTablename") String cellInfoTablename,
 			@Param("regTablename") String regTablename);
 	
 }

@@ -41,7 +41,6 @@ public class VisitCountServer implements IVisitCountServer {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("访问路径"+path);
 		if(vc.pathExit(path) == 0) {
 			vc.insertVisitData(path);
 		}else {

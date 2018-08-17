@@ -105,6 +105,14 @@
 		ORDER BY
 		RRC加ERAB失败总次数 desc
 	</select>
+	<select id="selectAllAllNetHourTopCell" parameterType="String"
+		resultType="cn.huahai.tel.bean.HourTopCellworkBase">
+		SELECT
+		<include refid="hourField"></include>
+		FROM ${tablename}
+		ORDER BY
+		RRC加ERAB失败总次数 desc
+	</select>
 	<!-- DayTopCellworkBase[] selectAllDayTopCell(@Param("tablename") String tablename); -->
 	<!-- 查询天级数据TOP小区 -->
 	<select id="selectAllDayTopCell" parameterType="String"
@@ -123,7 +131,14 @@
 		ORDER BY
 		RRC加ERAB失败总次数 desc
 	</select>
-	
+	<select id="selectAllAllNetDayTopCell" parameterType="String"
+		resultType="cn.huahai.tel.bean.DayTopCellworkBase">
+		SELECT
+			<include refid="DayField"></include>
+		FROM ${tablename}
+		ORDER BY
+		RRC加ERAB失败总次数 desc
+	</select>
 	<!-- HourTopCellworkBase[] selectVIPHourTopCell(@Param("tablename")String 
 		tablename); -->
 	<select id="selectVIPHourTopCell" parameterType="String"
@@ -141,6 +156,15 @@
 		&lt;= 20
 		)
 		WHERE RN &gt;= 0
+		ORDER BY
+		RRC加ERAB失败总次数 desc
+	</select>
+	<select id="selectAllVIPHourTopCell" parameterType="String"
+		resultType="cn.huahai.tel.bean.HourTopCellworkBase">
+		SELECT
+		<include refid="hourField"></include>
+		FROM ${tablename} t1 where t1.ENODEBID_CELLID in
+		(select ENODEBID_CELLID from ym_sys_cell where vip = 'VIP')
 		ORDER BY
 		RRC加ERAB失败总次数 desc
 	</select>
@@ -164,6 +188,15 @@
 		ORDER BY
 		RRC加ERAB失败总次数 desc
 	</select>
+	<select id="selectAllVIPDayTopCell" parameterType="String"
+		resultType="cn.huahai.tel.bean.DayTopCellworkBase">
+		SELECT
+		<include refid="DayField"></include>
+		FROM ${tablename} t1 where t1.ENODEBID_CELLID in
+		(select ENODEBID_CELLID from ym_sys_cell where vip = 'VIP')
+		ORDER BY
+		RRC加ERAB失败总次数 desc
+	</select>
 	<!-- HourTopCellworkBase[] selectPointKeyHourTopCell(@Param("cellInfoTablename") 
 		String cellInfoTablename, @Param("regTablename") String regTablename); -->
 	<select id="selectPointKeyHourTopCell"
@@ -180,6 +213,15 @@
 		WHERE ROWNUM &lt;= 20
 		)
 		WHERE RN &gt;= 0
+		ORDER BY
+		RRC加ERAB失败总次数 desc
+	</select>
+	<select id="selectAllPointKeyHourTopCell"
+		resultType="cn.huahai.tel.bean.HourTopCellworkBase">
+		SELECT
+			E.*
+		FROM ${cellInfoTablename} E,${regTablename} D WHERE E.ENODEBID_CELLID
+		= D.ENODEBID_CELLID
 		ORDER BY
 		RRC加ERAB失败总次数 desc
 	</select>
@@ -200,6 +242,15 @@
 		WHERE ROWNUM &lt;= 20
 		)
 		WHERE RN &gt;= 0
+		ORDER BY
+		RRC加ERAB失败总次数 desc
+	</select>
+	<select id="selectAllPointKeyDayTopCell"
+		resultType="cn.huahai.tel.bean.DayTopCellworkBase">
+		SELECT
+			E.*
+		FROM ${cellInfoTablename} E,${regTablename} D WHERE E.ENODEBID_CELLID
+		= D.ENODEBID_CELLID
 		ORDER BY
 		RRC加ERAB失败总次数 desc
 	</select>

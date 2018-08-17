@@ -44,7 +44,6 @@ public class GenerateExcel {
 	private static final String EXCEL_XLS = "xls";
 	private static final String EXCEL_XLSX = "xlsx";
 
-	private static CellStyle style = null;
 
 	public static Boolean setCellColor(List<CriticalValueBase> setValue,
 			String attribute, String data) {
@@ -106,18 +105,19 @@ public class GenerateExcel {
 			// for (String key : dataList.get(0).keySet()) {
 			// fields.add(key);
 			// }
-			if (style == null) {
-				// 生成单元格样式
-				CellStyle style = workBook.createCellStyle();
-				// 填充色
-				// style.setFillForegroundColor(HSSFColorPredefined.BLUE.getIndex());
-				style.setFillForegroundColor(HSSFColorPredefined.RED.getIndex());
-				style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-				// 字体颜色
-				Font font = workBook.createFont();
-				font.setColor(IndexedColors.WHITE.getIndex());
-				style.setFont(font);
-			}
+			// 生成单元格样式
+			CellStyle styleRed = workBook.createCellStyle(); // 填充色 
+			CellStyle styleBlue = workBook.createCellStyle();
+			// 填充色
+			styleBlue.setFillForegroundColor(HSSFColorPredefined.BLUE.getIndex());
+			styleRed.setFillForegroundColor(HSSFColorPredefined.RED.getIndex());
+			styleBlue.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+			styleRed.setFillPattern(FillPatternType.SOLID_FOREGROUND);
+			// 字体颜色
+			Font font = workBook.createFont();
+			font.setColor(IndexedColors.WHITE.getIndex());
+			styleBlue.setFont(font);
+			styleRed.setFont(font);
 			System.out.println(setValue.get(0).getAttribute());
 			for (int j = 0; j < dataList.size(); j++) {
 				// 创建一行：从第二行开始，跳过属性列
@@ -131,19 +131,12 @@ public class GenerateExcel {
 					String data = dataMap.get(datatype);
 					Boolean flag = setCellColor(setValue, datatype, data);
 					if (flag!= null) {
-						CellStyle style = workBook.createCellStyle(); // 填充色 
 						if(flag) {
-							style.setFillForegroundColor(HSSFColorPredefined.RED.getIndex());
+							cell.setCellStyle(styleRed);
 						}else {
-							style.setFillForegroundColor(HSSFColorPredefined.BLUE.getIndex());
+							cell.setCellStyle(styleBlue);
 						}
-						style.setFillPattern(FillPatternType.SOLID_FOREGROUND); // 字体颜色
-						Font font = workBook.createFont();
-						font.setColor(IndexedColors.WHITE.getIndex());
-						style.setFont(font);
-						cell.setCellStyle(style);
 					}
-
 					cell.setCellValue(data);
 				}
 			}
