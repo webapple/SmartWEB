@@ -40,7 +40,7 @@ public class VisitCountInterceptor implements HandlerInterceptor {
         System.out.println("ip:"+ip);
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         vcs.addVisitIpData(ip, df.format(new Date()));
-		vcs.addVisitData(request.getRequestURI(), request.getQueryString());
+		//vcs.addVisitData(request.getRequestURI(), request.getQueryString());
 		return true;
 	}
 

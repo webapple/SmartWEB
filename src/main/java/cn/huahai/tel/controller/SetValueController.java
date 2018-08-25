@@ -1,7 +1,5 @@
 package cn.huahai.tel.controller;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -10,13 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
-import net.sf.json.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-
-import cn.huahai.tel.bean.CriticalValueBase;
 import cn.huahai.tel.bean.ResponseResult;
-import cn.huahai.tel.mapper.SetValueMapper;
 import cn.huahai.tel.service.ISetValueServer;
 
 /**

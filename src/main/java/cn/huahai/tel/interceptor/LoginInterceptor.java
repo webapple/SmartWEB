@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
  * @author lizhuodong
  *
  */
+
 public class LoginInterceptor implements HandlerInterceptor{
 	
 //这控制器执行之前

@@ -34,8 +34,8 @@ public class VisitRequestUrlInterceptor  implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse arg1, Object arg2) throws Exception {
 		// TODO Auto-generated method stub
-		vcs.addVisitData(request.getRequestURI(), request.getQueryString());
+		// vcs.addVisitData(request.getRequestURI(), request.getQueryString());
 		return true;
 	}
-
+	
 }
